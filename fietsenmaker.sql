@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 nov 2023 om 08:28
--- Serverversie: 10.4.28-MariaDB
--- PHP-versie: 8.2.4
+-- Gegenereerd op: 12 dec 2023 om 15:25
+-- Serverversie: 10.4.24-MariaDB
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `naam` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `categorie`
@@ -58,26 +58,25 @@ CREATE TABLE `fietsen` (
   `type` varchar(255) NOT NULL,
   `prijs` decimal(7,2) NOT NULL,
   `categorie_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `fietsen`
 --
 
 INSERT INTO `fietsen` (`id`, `merk`, `type`, `prijs`, `categorie_id`) VALUES
-(8, 'Batavus', 'Blockbuster', 699.99, 1),
-(9, 'Batavus', 'Flying D', 899.00, 1),
-(10, 'Gazelle', 'Giro', 899.00, 2),
-(11, 'Gazelle', 'Chamonix', 1049.00, 2),
-(12, 'Gazelle', 'Eclipse', 799.00, 2),
-(13, 'Giant', 'Competition', 999.00, 3),
-(14, 'Giant', 'Expedition AT', 1299.00, 3),
-(19, 'Gazelle', 'Esprit', 2700.99, 2),
-(21, 'Gazelle', 'Turbo', 1500.00, 2),
-(22, 'Gazelle', 'Turbo', 1500.00, 2),
-(23, 'Gazelle', 'Turbo', 1500.00, 2),
-(24, 'Gazelle', 'Turbo', 1500.00, 2),
-(25, 'Gazelle', 'Esprit', 1700.00, 2);
+(8, 'Batavus', 'Blockbuster', '900.34', 1),
+(9, 'Batavus', 'Flying D', '899.00', 1),
+(10, 'Gazelle', 'Giro', '899.00', 2),
+(11, 'Gazelle', 'Chamonix', '1049.00', 2),
+(12, 'Gazelle', 'Eclipse', '799.00', 2),
+(13, 'Giant', 'Competition', '999.00', 3),
+(14, 'Giant', 'Expedition AT', '1299.00', 3),
+(19, 'Gazelle', 'Esprit', '2700.99', 2),
+(21, 'Gazelle', 'Turbo', '1500.00', 2),
+(23, 'Gazelle', 'Turbo', '1500.00', 2),
+(24, 'Gazelle', 'Turbo', '1500.00', 2),
+(25, 'Gazelle', 'Esprit', '1700.00', 2);
 
 --
 -- Indexen voor geëxporteerde tabellen
