@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 
 global $db;
@@ -17,6 +18,12 @@ $bikes = $query->fetchAll(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
+<?php
+if (isset($_SESSION['message'])){
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+?>
 <a href="insert.php">Toevoegen</a>
 <table>
     <thead>
@@ -24,6 +31,8 @@ $bikes = $query->fetchAll(PDO::FETCH_ASSOC);
         <th scope="col">type</th>
         <th scope="col">prijs</th>
         <th scope="col">categorie</th>
+        <th scope="col">update</th>
+        <th scope="col">delete</th>
     </tr>
     </thead>
     <tbody>
@@ -38,6 +47,8 @@ $bikes = $query->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $bike['type']?></td>
             <td><?= $bike['prijs']?></td>
             <td><?= $category['naam'] ?></td>
+            <td><a href="update.php?id=<?= $bike['id']?>">update</a></td>
+            <td><a href="delete.php?id=<?= $bike['id']?>">delete</a></td>
         </tr>
     <?php endforeach;?>
     </tbody>
